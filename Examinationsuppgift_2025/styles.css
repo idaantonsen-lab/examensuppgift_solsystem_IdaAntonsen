@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --sun-half: 220px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to right, #14041C, #040F4C);
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  letter-spacing: 1px;
+  overflow-y: hidden;
+  font-size: 13px;
+}
+
+.header-title {
+  letter-spacing: 0.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.header-subtitle {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0.8rem;
+  color: #FFD124;
+  line-height: 1;
+  text-align: right;
+}
+
+.header {
+  text-align: right;
+  padding-right: 50px;
+  position: absolute;
+  right: 0;
+}
+
+#planetContainer {
+  height: 100%;
+  min-width: 750px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow-x: hidden;
+  padding-left: var(--sun-half);
+}
+
+.planet {
+  border-radius: 50%;
+  min-width: 15px;
+  min-height: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.planet {
+  position: relative;
+  z-index: 2;
+}
+
+.planet:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 15px rgba(135, 206, 250, 0.831),
+    0 0 8px rgba(255, 255, 255, 0.8) inset;
+}
+
+.sun {
+  border-radius: 50%;
+  background-color: #FFD124;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.planet-merkurius {
+  background-color: #8D8B85;
+}
+
+.planet-venus {
+  background-color: #E8CDCC;
+}
+
+.planet-jorden {
+  background-color: #3F8FD6;
+}
+
+.planet-mars {
+  background-color: #EF5F5F;
+}
+
+.planet-jupiter {
+  background-color: #E39568;
+}
+
+.planet-saturnus {
+  background-color: #C8AC73;
+}
+.planet-saturnus::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 20px;
+  background: #ece5c9bb;
+  border-radius: 50% / 50%;
+  transform: translate(-50%, -50%) rotate(-27deg);
+  z-index: 1;
+}
+
+.planet-uranus {
+  background-color: #CAD5F1;
+}
+
+.planet-neptunus {
+  background-color: #7B92A9;
+}
+
+#overlayContent h2 {
+  font-size: 60px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#overlayContent h3 {
+  font-size: 1.5rem;
+  color: #ffd029;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 1rem;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/stars.svg"), linear-gradient(to right, #14041C, #040F4C);
+  color: white;
+  letter-spacing: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 100;
+  line-height: 1.3;
+  font-size: 16px;
+}
+
+#overlay.hidden {
+  display: none;
+}
+
+#overlayContent {
+  background-color: transparent;
+  padding: 60px 80px;
+  max-width: 950px;
+  width: 90%;
+  position: relative;
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  line-height: 1.3;
+  font-size: 20px;
+}
+
+#planetDescription {
+  max-width: 80%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 20px;
+}
+
+#planetFeaturesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 50px;
+}
+
+.feature-item {
+  padding-bottom: 20px;
+}
+
+.feature-label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 5px;
+  letter-spacing: 0.2rem;
+}
+
+.feature-value {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
